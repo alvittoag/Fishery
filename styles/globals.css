@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-primary {
+  @apply bg-[#4DC7A0];
+}
+
+.bg-seccondary {
+  @apply bg-[#C7E8E1];
+}
+
+.container-form {
+  @apply bg-white px-8 space-y-10 py-10 rounded-2xl shadow-[0_3px_10px_rgb(0,0,0,0.2)];
+}
