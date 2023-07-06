@@ -7,15 +7,15 @@ import axios from "axios";
 const URL = process.env.API_URL;
 
 const getFish = async (): Promise<Ifish[]> => {
-  const res = await axios.get(URL as string);
+  const res = await fetch(URL as string, { cache: "no-store" });
 
-  return res.data;
+  return res.json();
 };
 
 const getFishById = async (id: string | undefined): Promise<Ifish> => {
-  const res = await axios.get(`${URL as string}/${id}`);
+  const res = await fetch(`${URL as string}/${id}`);
 
-  return res.data;
+  return res.json();
 };
 
 const deleteFish = async (id: string | undefined) => {
