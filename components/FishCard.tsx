@@ -34,7 +34,13 @@ const FishCard = ({ data }: { data: Ifish }) => {
     <div className="bg-white px-6 py-4 rounded-2xl space-y-8 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
       <div className="space-y-1">
         <h1 className="font-[400]">{data.name}</h1>
-        <h2 className="font-bold">{data.price}</h2>
+        <h2 className="font-bold">
+          {new Intl.NumberFormat("id-ID", {
+            style: "currency",
+            maximumSignificantDigits: 10,
+            currency: "IDR",
+          }).format(data.price)}
+        </h2>
         <p className="text-[11px]">
           {data.province} - {data.city}
         </p>
